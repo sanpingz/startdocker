@@ -7,6 +7,7 @@ ENV REFRESHED_AT 2015-02-04
 RUN yum -y update; yum clean all
 RUN yum -y install epel-release; yum clean all
 RUN yum -y install python-pip; yum clean all
+RUN yum -y install gcc python-devel; yum clean all
 
 ENV APP_ROOT /webapp
 WORKDIR $APP_ROOT
