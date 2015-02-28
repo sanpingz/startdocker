@@ -1,2 +1,2 @@
 # DockStack
-Docker apps orchestrated by fig
+Docker apps orchestrated by docker-compose

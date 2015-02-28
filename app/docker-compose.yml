@@ -1,0 +1,25 @@
+redis:
+    image: sanpingz/centos:redis
+    command: redis-server redis.conf
+    volumes:
+        - redis.conf:/etc/redis.conf
+    ports:
+        - "6379:6379"
+flask:
+    image: sanpingz/centos:flask
+    command: gunicorn app:app -w 5 -k gevent -b 0.0.0.0:8000
+    volumes:
+        - webapp:/webapp
+    ports:
+        - "8000:8000"
+    links:
+        - redis:db
+nginx:
+    image: sanpingz/centos:nginx
+    command: nginx -g "daemon off;"
+    volumes:
+        - nginx.conf:/etc/nginx/nginx.conf
+    ports:
+        - "80:80"
+    links:
+        - flask
