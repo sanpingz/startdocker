@@ -1,2 +1,2 @@
-# DockStack
-Docker apps orchestrated by docker-compose
+# Dockfile
+Dockerfile for automated Docker builds
