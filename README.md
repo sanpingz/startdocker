@@ -1,2 +1,2 @@
 # Dockfile
-Dockerfile for automated Docker builds
+Quickstart with docker-compose to run multi-container Docker applications
